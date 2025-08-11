@@ -38,14 +38,23 @@ async def start_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
     keyboard = [
         [
             InlineKeyboardButton(
-                text="Open HOS App",
+                text="🚀 Open HOS Help Center",
                 web_app=WebAppInfo(url=WEB_APP_URL)
             )
         ]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
+
     await update.message.reply_text(
-        text="Welcome to the HOS Support App!\nClick the button below to open the HOS App.",
+        text=(
+            "**Welcome to the HOS Support Bot!**\n\n"
+            "Need help with your Hours of Service (HOS)? Our support team is here to assist you directly through Telegram:\n\n"
+            "🔹 Chat with support\n"
+            "🔹 Get fast answers to your HOS questions\n"
+            "🔹 Resolve issues quickly — without leaving the app\n\n"
+            "Tap the button below to launch the HOS Help Center 👇"
+        ),
+        parse_mode="Markdown",
         reply_markup=reply_markup
     )
 
